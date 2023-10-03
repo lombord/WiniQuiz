@@ -63,7 +63,7 @@ export default {
 }
 
 .table-box > :not(:first-child) {
-  @apply py-1 border-t border-zinc-300/50;
+  @apply py-1;
 }
 
 .t-row {
