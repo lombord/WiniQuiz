@@ -29,5 +29,4 @@ app.provide("session", sessionStore);
 
 directives.forEach((dir) => app.directive(dir.name, dir));
 
-app;
 app.mount("#app");
