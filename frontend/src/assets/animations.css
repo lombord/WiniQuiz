@@ -1,0 +1,101 @@
+@tailwind components;
+
+@layer components {
+  .click-anim {
+    @apply active:translate-y-0.5;
+  }
+
+  .click-anim2 {
+    @apply active:scale-90;
+  }
+
+  .btn-anim {
+    --anim-color: theme(colors.gray.200);
+    --hover-inset: 0;
+    @apply relative;
+  }
+
+  .btn-anim > * {
+    position: relative;
+  }
+
+  .btn-anim::before {
+    content: "";
+    @apply absolute inset-full z-0 opacity-0 rounded-full 
+    transition-all duration-200 hover:opacity-40
+    hover:inset-[--hover-inset]
+    bg-[--anim-color];
+  }
+}
+
+.load-anim {
+  @apply relative overflow-hidden pointer-events-none;
+}
+
+.load-anim > * {
+  @apply invisible;
+}
+
+.load-anim::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: inherit;
+  z-index: 100;
+}
+
+.load-anim::after {
+  --transform: translate(-50%, -50%);
+  content: "";
+  aspect-ratio: 1 / 1;
+  height: 30%;
+  min-height: 25px;
+  max-height: 100px;
+  top: 50%;
+  left: 50%;
+  border: 3px solid rgb(214, 214, 214);
+  border-top: 3px solid;
+  animation: spin 1s ease infinite;
+  z-index: 101;
+  @apply absolute rounded-full border-t-blue-600;
+}
+
+@keyframes spin {
+  0% {
+    transform: var(--transform) rotate(0deg);
+  }
+  100% {
+    transform: var(--transform) rotate(360deg);
+  }
+}
+
+.load-enter-active,
+.load-leave-active {
+  @apply transition;
+}
+
+.load-enter-active {
+  @apply hidden;
+}
+
+.load-leave-active {
+  @apply min-h-screen;
+}
+
+.load-leave-to {
+  @apply load-anim;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  @apply transition;
+}
+
+.fade-enter-active {
+  @apply hidden;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  @apply opacity-0;
+}

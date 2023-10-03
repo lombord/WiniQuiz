@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply px-3 py-1 rounded-md text-lg transition-colors;
+  }
+  .btn-lg {
+    @apply btn px-4 py-2 text-2xl;
+  }
+}
+
+*,
+::before,
+::after {
+  outline: none;
+}
+
+body {
+  @apply bg-gray-50 text-slate-800;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  @apply text-6xl;
+}
+
+h2 {
+  @apply text-5xl;
+}
+
+h3 {
+  @apply text-4xl;
+}
+h4 {
+  @apply text-3xl;
+}
+h5 {
+  @apply text-2xl;
+}
+h6 {
+  @apply text-xl;
+}
+
+div,
+p,
+li,
+input,
+span {
+  font-family: "Lexend", sans-serif;
+}
+
+a {
+  font-family: "DM Sans", sans-serif;
+  @apply transition hover:opacity-90;
+}
+
+.tflex {
+  @apply flex flex-wrap gap-2 items-center;
+}
+.col-flex {
+  @apply flex flex-col gap-3;
+}
+
+.btn-blue {
+  @apply text-white bg-blue-600
+  hover:bg-blue-700 active:bg-blue-800;
+}
+
+.btn-green {
+  @apply text-white bg-green-600
+  hover:bg-green-700 active:bg-green-800;
+}
+
+.btn-yellow {
+  @apply text-white bg-yellow-500
+  hover:bg-yellow-600 active:bg-yellow-700;
+}
+
+.btn-red {
+  @apply text-white bg-red-600
+  hover:bg-red-700 active:bg-red-800;
+}
+
+.btn-white {
+  @apply text-black bg-white
+  hover:bg-gray-100 active:bg-white;
+}
+
+.btn-gray {
+  @apply text-white bg-gray-700
+  hover:bg-gray-600 active:bg-gray-700;
+}
+
+.btn-outline-blue {
+  @apply text-blue-600 bg-transparent
+  outline outline-2 outline-blue-700
+  hover:bg-blue-700
+  hover:text-white
+   active:bg-blue-800;
+}
+
+.btn-outline-green {
+  @apply text-green-600 bg-transparent
+  outline outline-2 outline-green-700
+  hover:bg-green-700
+  hover:text-white
+   active:bg-green-800;
+}
+
+.btn-outline-yellow {
+  @apply text-yellow-500 bg-transparent
+  outline outline-2 outline-yellow-600
+  hover:bg-yellow-600
+  hover:text-white
+   active:bg-yellow-700;
+}
+
+.btn-outline-red {
+  @apply text-red-600 bg-transparent
+  outline outline-2 outline-red-700
+  hover:bg-red-700
+  hover:text-white
+   active:bg-red-800;
+}
+
+.screen-center {
+  @apply flex justify-center items-center;
+}
+
+.badge {
+  @apply px-2 py-1 rounded-lg text-white;
+}
+
+/* Scroll bar Styles */
+
+/* width */
+::-webkit-scrollbar {
+  --size: clamp(0.2rem, 0.8vw, 0.6rem);
+  width: var(--size);
+  height: var(--size);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-900  bg-opacity-20 rounded-full max-w-[10px];
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-opacity-30;
+}
+
+::-webkit-scrollbar-thumb:active {
+  @apply bg-opacity-20;
+}
+
+/* end */
